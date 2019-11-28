@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Code</title>
+  <link rel="stylesheet" href="/css/master.css">
+  <link rel="stylesheet" href="/css/codemirror-tools.css">
+  <link rel="stylesheet" href="/css/editor.css">
+</head>
+<body>
+  <main id="app" @keyup="switchEditor">
+    <div class="output">
+      <iframe ref="codePreview" class="output__preview output__preview--code"></iframe>
+    </div>
+    <div class="input">
+      <ul class="tabs">
+        <li
+          class="tabs__tab"
+          :class="{active: index === selectedEditor}"
+          v-for="(editor, index) in editorTypes"
+          @click="selectEditor(index)"
+        >
+          <img class="tabs__icon" :src="editor.icon" :alt="editor.type">
+        </li>
+      </ul>
+      <div class="input__editors">
+        <code-mirror
+          v-for="(editor, index) in editorTypes"
+          :key="index"
+          :class="{active: index === selectedEditor}"
+          :data-mode="editor.type"
+        ></code-mirror>
+      </div>
+    </div>
+  </main>
+  <script src="/js/vue.js"></script>
+  <script src="/js/codemirror-tools.js"></script>
+  <script src="/js/markdown-tools.js"></script>
+  <script src="/js/emmet.min.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>
