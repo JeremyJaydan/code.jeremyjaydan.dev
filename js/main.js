@@ -3,6 +3,23 @@
 
 const app = (function(){
 
+  const $defaultHTMLValue = ([
+    "# Welcome to code.jcdn.io",
+    "## Features: ",
+    "- The HTML editor is Markdown driven",
+    "- Emmet enabled for the HTML editor",
+    "- Code is saved in local browser storage",
+    "- Refresh after editing JavaScript to see changes"
+  ]).join("\n");
+
+  const $defaultCSSValue = ([
+    "body{",
+    " padding: 16px;",
+    " font-family: arial;",
+    "}"
+  ]).join("\n");
+
+
   const $storageKey = "code.jcdn.io";
   const $storage = {
     setItem: function(key, value){
@@ -101,8 +118,8 @@ const app = (function(){
     el: "#app",
     data: {
       selectedEditor: parseInt($storage.getItem("selected_editor")) || 0,
-      "html": $storage.getItem("html"),
-      "css": $storage.getItem("css"),
+      "html": $storage.getItem("html") || $defaultHTMLValue,
+      "css": $storage.getItem("css") || $defaultCSSValue,
       "javascript": $storage.getItem("javascript"),
       editorTypes: [
         {
@@ -150,6 +167,7 @@ const app = (function(){
 
   let $doc = {};
   (function preview(contentDocument){
+
     $doc.__css = document.createElement("style");
     $doc.__main = document.createElement("main");
     $doc.__script = document.createElement("script");
