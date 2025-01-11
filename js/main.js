@@ -6,6 +6,9 @@ const app = (function () {
         "- Emmet enabled for the HTML editor",
         "- Code is saved in local browser storage",
         "- Refresh after editing JavaScript to see changes",
+        `<a style="display: block; margin-top: 8px;" href="https://github.com/JeremyJaydan/code.jeremyjaydan.dev" target="_blank">
+          <span>View on GitHub</span>
+        </a>`
     ].join("\n");
 
     const $defaultCSSValue = [
