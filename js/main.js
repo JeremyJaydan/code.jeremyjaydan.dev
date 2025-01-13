@@ -1,12 +1,12 @@
 const app = (function () {
     const $defaultHTMLValue = [
-        "# Welcome to code.jeremyjaydan.dev",
+        "# Welcome to Code",
         "## Features: ",
         "- The HTML editor is Markdown driven",
         "- Emmet enabled for the HTML editor",
         "- Code is saved in local browser storage",
         "- Refresh after editing JavaScript to see changes",
-        `<a style="display: block; margin-top: 8px;" href="https://github.com/JeremyJaydan/code.jeremyjaydan.dev" target="_blank">
+        `<a style="display: block; margin-top: 8px;" href="https://github.com/JeremyJaydan/code" target="_blank">
           <span>View on GitHub</span>
         </a>`
     ].join("\n");
@@ -18,7 +18,7 @@ const app = (function () {
         "}",
     ].join("\n");
 
-    const $storageKey = "code.jeremyjaydan.dev";
+    const $storageKey = "code.jeremyjaydan.com";
     const $storage = {
         setItem: function (key, value) {
             window.localStorage.setItem($storageKey + "_" + key, value);

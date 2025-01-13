@@ -1,3 +1,3 @@
-# code.jeremyjaydan.dev
+# Code
 
-Simple code playground built for speed
+Code sandbox built for speed
